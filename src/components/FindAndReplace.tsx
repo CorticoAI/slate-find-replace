@@ -1,6 +1,6 @@
 import React from "react";
-import { SearchParams, ReplaceParams } from "./types";
-import { MIN_SEARCH_WORD_LENGTH } from "./utils/slate-find-replace";
+import { SearchParams, ReplaceParams } from "../types";
+import { MIN_SEARCH_WORD_LENGTH } from "../utils/slate-find-replace";
 
 interface Props {
   searchParams: SearchParams;
@@ -18,7 +18,7 @@ const FindAndReplace = ({
   onSearchPrevious,
   onReplace,
   totalSearchResults,
-  searchIndex
+  searchIndex,
 }: Props) => {
   const [draftReplace, setDraftReplace] = React.useState("");
 
@@ -40,7 +40,7 @@ const FindAndReplace = ({
   const toggleCaseSensitive = () => {
     setSearchParams({
       ...searchParams,
-      caseSensitive: !searchParams.caseSensitive
+      caseSensitive: !searchParams.caseSensitive,
     });
   };
 

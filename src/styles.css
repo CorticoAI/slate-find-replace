@@ -1,3 +1,7 @@
 .App {
   font-family: sans-serif;
 }
+
+.content {
+  padding: 10px 25px;
+}
