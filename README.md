@@ -1,0 +1,3 @@
+# Slate find and replace example
+
+more soon....
