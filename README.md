@@ -1,5 +1,7 @@
 # Slate find and replace example
 
+![unit test badge](https://github.com/corticoai/slate-find-replace/actions/workflows/main.yml/badge.svg)
+
 Example of a find and replace feature for [SlateJS](https://github.com/ianstormtaylor/slate)
 
 ## Demo
