@@ -1,6 +1,17 @@
 name: Unit tests
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src"
+      - ".github/workflows/main.yml"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "src"
+      - ".github/workflows/main.yml"
 
 jobs:
   test:
