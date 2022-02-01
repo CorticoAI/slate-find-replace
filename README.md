@@ -16,3 +16,33 @@ https://corticoai.github.io/slate-find-replace/
 - Replace one word
 - Replace all instances of a word
 - Case sensitive option
+
+## Developing
+
+### Installing
+
+```
+yarn
+```
+
+### Running
+
+```
+yarn start
+```
+
+### Testing
+
+```
+yarn test
+```
+
+### Deploying
+
+Annoying right now, should automate eventually.
+
+```
+yarn build
+```
+
+Then git push your changes, including the `docs` folder.
