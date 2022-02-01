@@ -47,7 +47,7 @@ export const getSearchRanges = (
         anchor: { path, offset: offset - search.length },
         focus: { path, offset },
         isSearchHighlight: true,
-        isFocusedSearchHighlight: !!isFocusedSearchHighlight
+        isFocusedSearchHighlight: !!isFocusedSearchHighlight,
       });
     }
 
@@ -70,7 +70,9 @@ export const getAllSearchRanges = (
 
   const matchingNodes = Editor.nodes(editor, {
     at: [],
-    match: (node) => Text.isText(node) && node.text.includes(searchParams.q)
+    match: (node) =>
+      Text.isText(node) &&
+      node.text.toLowerCase().includes(searchParams.q.toLowerCase()),
   });
   let nodeMatch = matchingNodes.next();
   let ranges: DecoratedRange[] = [];
@@ -90,8 +92,8 @@ export const replaceOne = (
   Transforms.insertText(editor, text, {
     at: {
       anchor: focusedSearch.anchor,
-      focus: focusedSearch.focus
-    }
+      focus: focusedSearch.focus,
+    },
   });
 };
 
@@ -126,13 +128,13 @@ export const replaceAll = (
       at: {
         anchor: {
           ...range.anchor,
-          offset: range.anchor.offset + sameNodeAdjustment
+          offset: range.anchor.offset + sameNodeAdjustment,
         },
         focus: {
           ...range.focus,
-          offset: range.focus.offset + sameNodeAdjustment
-        }
-      }
+          offset: range.focus.offset + sameNodeAdjustment,
+        },
+      },
     });
 
     prevNodePath = range.anchor.path;
